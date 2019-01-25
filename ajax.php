@@ -9,7 +9,7 @@
 
 //Remplacer les valeurs si besoin
 
-$servername = "localhost"; $username = "root"; $password = ""; $dbname = "simon";
+$servername = "localhost"; $username = "root"; $password = ""; $dbname = "ajax_json";
 
 $conn = new mysqli($servername, $username, $password);
 
@@ -24,10 +24,16 @@ if ($conn->connect_error) {
     switch($_GET['action'])
     {
         case"affProducts":
+
             $res = "select * from `products` where 1";
+
             break;
-        case"affPurchased":
+
+            case"affPurchased":
             //Votre code ici
+
+            $res = "select * from `products_purchased` where 1";
+
             break;
     }
 
